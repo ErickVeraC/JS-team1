@@ -10,7 +10,7 @@
 </head>
 <body>
   <header class="navComponent">
-    <nav class="container">
+<!-- Aqui va la navbar, dejo el codigo, por si necesitan replicarlo  <nav class="container">
       <div class="row">
         <div class="col col-md-7 col-xl-8">
           <div class="d-flex align-items-center gap-3">
@@ -393,22 +393,29 @@
           </div>
         </div>
       </div>
-    </nav>
+    </nav> -->  
   </header>
   <main class="container d-flex justify-content-center">
     <aside class="adan col-3 d-none d-sm-block p-0 m-2">
-      <div class="div-card">
-        <h2 class="encabezado  mb-4">
-          DEV Community is a community of 1,519,891 amazing developers
-        </h2>
-        <p class="color-base-70 mb-4">
-          We're a place where coders share, stay up-to-date and grow their careers.
-        </p>
-        <div class="div-card--buttons-div">
-          <button class="buttons-div--create">Create account</button>
-          <button class="buttons-div--login">Log in</button>
+      <article class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">
+            DEV Community is a community of 1,513,398 amazing developers
+          </h5>
+          <p class="card-text">
+            We're a place where coders share, stay up-to-date and grow
+            their careers.
+          </p>
+          <a
+            href="#"
+            class="btn btn-outline-primary d-flex justify-content-center"
+            >Create an account</a
+          >
+          <a href="" class="btn d-flex justify-content-center side-btn"
+            >Log in</a
+          >
         </div>
-      </div>
+      </article>
       <nav class="nav-icons">
           <ul class="nav-icons--list">
             <li class="hover-asideadan" >
@@ -887,298 +894,19 @@
             </div>
         </div>
     </nav>
-      <footer>
+      <div>
         <p>DEV Community A constructive and inclusive social network for software developers. With you every step of your journey.</p>
         <p>Built on Forem — the open source software that powers DEV and other inclusive communities.</p>
         <p>Made with love and Ruby on Rails. DEV Community © 2016 - 2024.</p>
-      </footer>
+      </div>
       </div>
     </aside>
     <section class="d-flex flex-wrap col-lg-6 p-1 mt-2">
-      <div class="main-navi_top">
-        <span><strong>Relevant</strong></span>
-        <span>Latest</span>
-        <span>Top</span>
-      </div>
-      <div class="main-container col-lg-12 card">
-        <div class="dev-com">
-          <div class="head-dev-com d-flex justify-content-between">
-            <p class="text-start mt-3">DEV Community.</p>
-            <button type="button" class="btn btn-outline-secondary border-0">...</button>
-          </div>
-        </div>
-        <div class="card border-0 p-4">
-          <div>
-            <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wzgGMCLs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_775/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qpdtjnt4fnuwag8noec8.png" class="card-img-top" alt="...">
-          </div>
-          <div class="card-body p-0">
-            <h5 class="card-title"> Need to stay up-to-date with the most relevant trends in software, such as generate AI, cloud computing, and all things frontend?</h5>
-            <p class="card-text">Look no further.</p>
-            <p>You can do so much more once you </p>
-            <a class="start-now" href="">Start now</a>
-            <p>Happy coding ❤️</p>
-           </div>
-        </div>
-      </div>
-      <div class="card mt-2 w-100">
-        <div class="card-body">
-          <div class="user-name">
-            <div class="user-name_date d-flex">
-              <div>
-                <img src="https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F275629%2Fffa9b0d7-4a34-4dc0-bcf3-ab55c9b5819c.jpeg" class="profile-image" alt="">
-              </div>
-              <div>
-                <p class="date-name m-0"><strong>Andres Ledezma</strong></p>
-                <p class="date-name m-0">May 26</p>
-              </div>
-            </div>
-          </div>
-          <div class="general-info">
-            <h6>How to inject simple dummy data at a large scale in MySQL</h6>
-            <div class="hashtags-info">
-              <span>#database</span><span>#mysql</span><span>#programming</span><span>#designsystem</span>
-            </div>
-            <div class="reaction-comments d-flex justify-content-between mt-3">
-              <div class="d-flex gap-3">
-                <div class="reaction-emojis d-flex">
-                  <div class="emojis-div d-flex mt-2">
-                    <img src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg" class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg" class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg" class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg" class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg" class="img-emoji" alt="">
-                  </div>
-                  <div class="emojis-reaction_numbers d-flex mt-1 gap-1">
-                    <span>5</span><span class="d-none d-md-block">Reactions</span>
-                  </div>
-                </div>
-                <div class="reactions-div d-flex">
-                  <div class="mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="a9w844bypbmmg6c1j5oo7va9cvumhlk2" class="crayons-icon"><title id="a9w844bypbmmg6c1j5oo7va9cvumhlk2">Comments</title><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
-                  </div>
-                  <div class="d-none d-md-block mt-2">
-                    <p>Add Comment</p>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex">
-                <p class="mt-2">9 min read</p>
-                <button type="button" class="btn btn-outline-secondary border-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true"><path d="M6.75 4.5h10.5a.75.75 0 01.75.75v14.357a.375.375 0 01-.575.318L12 16.523l-5.426 3.401A.375.375 0 016 19.607V5.25a.75.75 0 01.75-.75zM16.5 6h-9v11.574l4.5-2.82 4.5 2.82V6z"></path></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card mt-2">
-        <div class="card-body">
-          <div class="user-name">
-            <div class="user-name_date d-flex">
-              <div>
-                <img src="https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1438027%2F04e4ac18-640c-4b7e-9f91-115110c63a1c.jpg" class="profile-image" alt="">
-              </div>
-              <div>
-                <p class="date-name m-0"><strong>Henry</strong></p>
-                <p class="date-name m-0">May 27</p>
-              </div>
-            </div>
-          </div>
-          <div class="general-info">
-            <img src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fkp7qk0w4chs6wvtpgysj.png" class="d-none" alt="">
-            <h6>How to create a linux VM on Azure (using PowerShell and install ‘NGINX’ Engine)</h6>
-            <div class="reaction-comments d-flex justify-content-between mt-3">
-              <div class="d-flex gap-3">
-                <div class="reaction-emojis d-flex">
-                  <div class="emojis-div d-flex mt-2">
-                    <img src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg"class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg"class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg"class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg"class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg"class="img-emoji" alt="">
-                  </div>
-                  <div class="emojis-reaction_numbers d-flex mt-1 gap-1">
-                    <span>10</span><span class="d-none d-md-block">Reactions</span>
-                  </div>
-                </div>
-                <div class="reactions-div d-flex">
-                  <div class="mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="a9w844bypbmmg6c1j5oo7va9cvumhlk2" class="crayons-icon"><title id="a9w844bypbmmg6c1j5oo7va9cvumhlk2">Comments</title><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
-                  </div>
-                  <div class="d-none d-md-block mt-2">
-                    <p>Add Comment</p>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex">
-                <p class="mt-2">2 min read</p>
-                <button type="button" class="btn btn-outline-secondary border-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true"><path d="M6.75 4.5h10.5a.75.75 0 01.75.75v14.357a.375.375 0 01-.575.318L12 16.523l-5.426 3.401A.375.375 0 016 19.607V5.25a.75.75 0 01.75-.75zM16.5 6h-9v11.574l4.5-2.82 4.5 2.82V6z"></path></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card mt-2 w-100">
-        <div class="card-body">
-          <div class="user-name">
-            <div class="user-name_date d-flex">
-              <div>
-                <img src="https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F934%2F26d7a9bd-0536-4a2d-9d37-c46a1192f6c4.png" class="profile-image" alt="">
-              </div>
-              <div>
-                <p class="date-name m-0"><strong>Necati Ozmen</strong></p>
-                <p class="date-name m-0">May 26</p>
-              </div>
-            </div>
-          </div>
-          <div class="general-info">
-            <h6>👾 Using  Arguments in Bash Scripts</h6>
-            <div class="hashtags-info">
-              <span>#javascript</span><span>#webdev</span><span>#bash</span><span>#beginners</span>
-              <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--y59ux9I_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://refine.ams3.cdn.digitaloceanspaces.com/readme/refine-readme-banner.png" class="d-none" alt="">
-            </div>
-            <div class="reaction-comments d-flex justify-content-between mt-3">
-              <div class="d-flex gap-3">
-                <div class="reaction-emojis d-flex">
-                  <div class="emojis-div d-flex mt-2">
-                    <img src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg"class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg"class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg"class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg"class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg"class="img-emoji" alt="">
-                  </div>
-                  <div class="emojis-reaction_numbers d-flex mt-1 gap-1">
-                    <span>15</span><span class="d-none d-md-block">Reactions</span>
-                  </div>
-                </div>
-                <div class="reactions-div d-flex">
-                  <div class="mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="a9w844bypbmmg6c1j5oo7va9cvumhlk2" class="crayons-icon"><title id="a9w844bypbmmg6c1j5oo7va9cvumhlk2">Comments</title><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
-                  </div>
-                  <div class="d-none d-md-block mt-2">
-                    <p>Add Comment</p>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex">
-                <p class="mt-2">5 min read</p>
-                <button type="button" class="btn btn-outline-secondary border-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true"><path d="M6.75 4.5h10.5a.75.75 0 01.75.75v14.357a.375.375 0 01-.575.318L12 16.523l-5.426 3.401A.375.375 0 016 19.607V5.25a.75.75 0 01.75-.75zM16.5 6h-9v11.574l4.5-2.82 4.5 2.82V6z"></path></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card mt-2">
-        <div class="card-body">
-          <div class="user-name">
-            <div class="user-name_date d-flex">
-              <div>
-                <img src="https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F189191%2Fcee5c7b5-bde8-4603-94f0-75aa63fa5393.png" class="profile-image" alt="">
-              </div>
-              <div>
-                <p class="date-name m-0"><strong>Jaime Lopez</strong></p>
-                <p class="date-name m-0">May 27</p>
-              </div>
-            </div>
-          </div>
-          <div class="general-info">
-            <h6>Weekly Roundup 054 (May 20): 🔥Hot Topics🔥 in #workplace, #sharepoint, and #powerplatform</h6>
-            <div class="hashtags-info">
-              <span>#roundup</span><span>#workspace</span><span>#sharepoint</span><span>#powerplatform</span>
-            </div>
-            <div class="reaction-comments d-flex justify-content-between mt-3">
-              <div class="d-flex gap-3">
-                <div class="reaction-emojis d-flex">
-                  <div class="emojis-div d-flex mt-2">
-                    <img src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg"class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg"class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg"class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg"class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg"class="img-emoji" alt="">
-                  </div>
-                  <div class="emojis-reaction_numbers d-flex mt-1 gap-1">
-                    <span>8</span><span class="d-none d-md-block">Reactions</span>
-                  </div>
-                </div>
-                <div class="reactions-div d-flex">
-                  <div class="mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="a9w844bypbmmg6c1j5oo7va9cvumhlk2" class="crayons-icon"><title id="a9w844bypbmmg6c1j5oo7va9cvumhlk2">Comments</title><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
-                  </div>
-                  <div class="d-none d-md-block mt-2">
-                    <p>Add Comment</p>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex">
-                <p class="mt-2">2 min read</p>
-                <button type="button" class="btn btn-outline-secondary border-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true"><path d="M6.75 4.5h10.5a.75.75 0 01.75.75v14.357a.375.375 0 01-.575.318L12 16.523l-5.426 3.401A.375.375 0 016 19.607V5.25a.75.75 0 01.75-.75zM16.5 6h-9v11.574l4.5-2.82 4.5 2.82V6z"></path></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card mt-2">
-        <div class="card-body">
-          <div class="user-name">
-            <div class="user-name_date d-flex">
-              <div>
-                <img src="https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F1508610%2F452314a7-320a-4348-b16e-6237ac3abbec.png" class="profile-image" alt="">
-              </div>
-              <div>
-                <p class="date-name m-0"><strong>uchemma001</strong></p>
-                <p class="date-name m-0">May 27</p>
-              </div>
-            </div>
-          </div>
-          <div class="general-info">
-            <h6>Measure DC Voltage and Current with Arduino: A Step-by-Step Guide with Simple Code and LCD Display</h6>
-            <div class="hashtags-info">
-              <span>#opensource</span><span>#beginners</span><span>#coding</span><span>#arduino</span>
-              <img src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F7nj2vlkf4vlrjz2k8l1z.jpg" class="d-none" alt="">
-            </div>
-            <div class="reaction-comments d-flex justify-content-between mt-3">
-              <div class="d-flex gap-3">
-                <div class="reaction-emojis d-flex">
-                  <div class="emojis-div d-flex mt-2">
-                    <img src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg" class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg" class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg" class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg" class="img-emoji" alt="">
-                    <img src="https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg" class="img-emoji" alt="">
-                  </div>
-                  <div class="emojis-reaction_numbers d-flex mt-1 gap-1">
-                    <span>3</span><span class="d-none d-md-block">Reactions</span>
-                  </div>
-                </div>
-                <div class="reactions-div d-flex">
-                  <div class="mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="a9w844bypbmmg6c1j5oo7va9cvumhlk2" class="crayons-icon"><title id="a9w844bypbmmg6c1j5oo7va9cvumhlk2">Comments</title><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
-                  </div>
-                  <div class="d-none d-md-block">
-                    <p class="mt-2">Add Comment</p>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex">
-                <p class="mt-2">4 min read</p>
-                <button type="button" class="btn btn-outline-secondary border-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true"><path d="M6.75 4.5h10.5a.75.75 0 01.75.75v14.357a.375.375 0 01-.575.318L12 16.523l-5.426 3.401A.375.375 0 016 19.607V5.25a.75.75 0 01.75-.75zM16.5 6h-9v11.574l4.5-2.82 4.5 2.82V6z"></path></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<!--Zona de cards-->
     </section>
     <aside class="aside2  col-3 d-none d-sm-block">
 
-      <div class="fiststylewrapper">
+<!--   <div class="fiststylewrapper">
         <ul class="list-group">
           <li class="list-group-item">
             <p class="list-group-item--title"># discuss</p>
@@ -1208,129 +936,13 @@
           </li>
         </ul>
       </div>
-      <div class="fiststylewrapper">
-        <div class="list-group">
-          <li class="list-group-item">
-            <p class="list-group-item--title"># watercooler</p>
-            <p class="list-group-item--description">
-              Light, and off-topic conversation.
-            </p>
-          </li>
-          <li class="list-group-item">
-            <a href="" class="list-group-item--text">Meme Monday</a>
-            <a href="" class="list-group-item--comments">27 comments</a>
-          </li>
-          <li class="list-group-item">
-            <a href="" class="list-group-item--text">We need to slow down, Everything is going too fast</a>
-            <button href="" class="list-group-item--button">New</button>
-          </li>
-        </div>
-      </div>
-      <div class="secondstylewrapper">
-        <p>trending guides / resources</p>
-        <div class="secondstylewrapper__card">
-          <a href="">Top 50 System Design Interview Questions for 2024</a>
-          <a href="">5 Skills Programmers and Developers Should Learn in 2024 </a>
-          <a href="">Array.reduce() is Goated :dog2: :sparkles:</a>
-          <a href="">You´re not a software engineer; you´re a "frameworker</a>
-          <a href="">Mastering Relational Database Design: A Comprehensive
-            Guide</a>
-          <a href="">:spider_web:Web development trends we will see in 2024</a>
-          <a href="">GTP-4p: Learn how to Implement a RAG on the new model, step
-            by-step!</a>
-          <a href="">Why nobody grows up wanting to be a DevOps engineer</a>
-        </div>
-        <hr>
-        <p>recently queried</p>
-        <div class="secondstylewrapper__card">
-          <a href="">Bulma vs Bootstrap</a>
-          <a href="">cURL vs Postman</a>
-          <a href="">cuRl Response Time</a>
-          <a href="">Window Keyboard on Mac</a>
-          <a href="">Javascript Random String</a>
-          <a href="">Declarative vs Imperative</a>
-          <a href="">Git Revert Pushed Commit</a>
-          <a href="">Javascript Hack</a>
-          <a href="">userReducer TypeScript</a>
-          <a href="">Flask Tutotial</a>
-          </li>
-          </ul>
-        </div>
-    </aside>
+
+    </aside>-->
   </main>
-  <footer>
-    <div class="footer text-center">
-      <div class="container">
-        <div class="row">
-          <p class="footer__legals">
-            <a class="footer__link" href="/">DEV Community</a> — A
-            constructive and inclusive social network for software developers.
-            With you every step of your journey.
-          </p>
-          <ul class="footer__nav-links d-flex flex-wrap align-items-center justify-content-center">
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/">Home</a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/">Podcasts</a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/">Tags</a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/">Dev help</a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/">Forem shop</a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/">Advertise on DEV</a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/"> DEV Challenges</a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/">DEV Showcase</a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/">About</a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/">Contact</a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/">Guides</a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/"> Software comparisons</a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/"> Code of Conduct</a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/"> Privacy Policy </a>
-            </li>
-            <li class="footer__nav-link">
-              <a class="footer__link" href="/"> Terms of use </a>
-            </li>
-          </ul>
-          <p class="footer__legals">
-            Built on <a class="footer__link" href="/"> Forem</a> —
-            <a class="footer__link" href="/"> the open source </a>software
-            that powers <a class="footer__link" href="/"> DEV </a>and other
-            inclusive communities.
-          </p>
-          <p class="footer__legals">
-            Made with love and
-            <a class="footer__link" href="/">Ruby on Rails.</a> DEV Community
-            © 2016 - 2024.
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>
