@@ -15,6 +15,10 @@ div.container {
   width: 55px;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1 {
   font: bold;
   font-size: 30px;
@@ -22,7 +26,7 @@ h1 {
   margin-top: 1.5rem;
 }
 
-p {
+p.card-text {
   font-size: 16px;
   margin-left: 4rem;
 }
@@ -43,22 +47,32 @@ p {
   border-color: #aaa;
 }
 
-.divider {
-  width: 100%;
-  border: 0;
-  border-top: 1px solid;
-  border-color: #aeaeb4;
-  margin: 1rem 0;
+.login-email {
+  width: 33rem;
+  margin-left: 2rem;
 }
 
-.text-divider {
-  font-size: 0.9rem;
-  color: #a5adb5;
-  margin: -1rem 0 1rem;
+.d-flex.forgot-password {
+  justify-content: space-between;
 }
 
 .btn.btn-primary {
   height: 2.5rem;
+  width: 33rem;
+}
+
+p.crate-account-text {
+  margin-left: 0rem;
+  text-align: center;
+}
+
+.last-p p {
+  text-align: center;
+}
+
+.separation-block {
+  margin-bottom: 2rem;
   margin-left: 2rem;
+  margin-top: 2rem;
   width: 33rem;
 }/*# sourceMappingURL=styleslog.css.map */
