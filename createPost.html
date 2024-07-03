@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="CSS/styles.css" />
   </head>
   <body>
-    <head>
+    <header>
       <nav class="navbar navbar-light bg-light">
         <div class="container d-flex">
           <a class="navbar-brand" href="#">
@@ -24,16 +24,26 @@
           </a>
         </div>
       </nav>
-    </head>
+    </header>
     <section class="container full-height">
       <div class="row h-100">
         <div class="col-12 col-md-9 h-100">
           <div class="card mb-3 mt-3 h-100">
             <div class="card-body h-100">
               <div class="d-flex flex-column gap-3">
-                <button type="button" class="btn btn-outline-secondary">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary btn-cover-image"
+                  id="addCoverImageButton"
+                >
                   Add a cover image
                 </button>
+                <input
+                  type="text"
+                  class="form-control mt-2"
+                  id="coverImageUrl"
+                  placeholder="Enter image URL"
+                />
                 <div class="form-floating">
                   <textarea
                     class="form-control"
@@ -47,7 +57,7 @@
                     type="text"
                     class="form-control"
                     id="tagsInput"
-                    placeholder="Add tags"
+                    placeholder="Add tags to 4 tags"
                   />
                   <label for="tagsInput">Add tags</label>
                   <div id="tagsContainer" class="mt-2"></div>
@@ -62,6 +72,14 @@
                   <label for="postContent"
                     >Write your post content here...</label
                   >
+                </div>
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    id="postAuthor"
+                    placeholder="Author..."
+                  ></textarea>
+                  <label for="postAuthor">Author...</label>
                 </div>
               </div>
             </div>
