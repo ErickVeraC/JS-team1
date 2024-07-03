@@ -11,18 +11,24 @@ div.container {
 }
 
 .dev-img {
-  margin-left: 18rem;
+  margin-left: 17rem;
+  width: 55px;
 }
 
 h1 {
   font: bold;
   font-size: 30px;
-  margin-left: 7rem;
+  margin-left: 7.5rem;
+  margin-top: 1.5rem;
 }
 
 p {
   font-size: 16px;
   margin-left: 4rem;
+}
+
+.list-social-button {
+  list-style: none;
 }
 
 .social-media-button {
@@ -37,7 +43,22 @@ p {
   border-color: #aaa;
 }
 
+.divider {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid;
+  border-color: #aeaeb4;
+  margin: 1rem 0;
+}
+
+.text-divider {
+  font-size: 0.9rem;
+  color: #a5adb5;
+  margin: -1rem 0 1rem;
+}
+
 .btn.btn-primary {
+  height: 2.5rem;
   margin-left: 2rem;
   width: 33rem;
 }/*# sourceMappingURL=styleslog.css.map */
