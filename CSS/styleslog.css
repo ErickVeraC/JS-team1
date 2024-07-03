@@ -37,8 +37,12 @@ p.card-text {
 }
 
 .social-media-button {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   background-color: white;
   border: 1px solid;
+  border-color: #aaa;
   border-radius: 5px;
   height: 3rem;
   width: 80%;
@@ -46,6 +50,10 @@ p.card-text {
 .social-media-button:hover {
   background-color: #e0e0e0;
   border-color: #aaa;
+}
+
+.social-media-button-name {
+  margin-left: 33%;
 }
 
 .separation-block {
