@@ -1,3 +1,6 @@
+const tagsInput = document.getElementById("postTags");
+const tagsContainer = document.getElementById("tagsContainer");
+
 const addTag = (tag, tagsContainer) => {
   if (tag.trim() === "") return;
 
@@ -17,4 +20,14 @@ const addTag = (tag, tagsContainer) => {
   tagsContainer.appendChild(tagElement);
 };
 
-export { addTag };
+let tagsArray = [];
+tagsInput.addEventListener("keydown", (event) => {
+  let keyCode = event.keyCode;
+  let value = event.target.value;
+  if (keyCode === 32) {
+    // Separa los tags con la barra espaciadora
+    tagsArray = [...tagsArray, value.trim()];
+    tagsInput.value = "";
+    addTag(value, tagsContainer);
+  }
+});

@@ -830,18 +830,45 @@ div.emojis-reaction_numbers.d-flex.mt-1.gap-1{
 
 // creador de posts
 .form-control {
-  border: none; /* Quita el borde */
-  box-shadow: none; /* Quita el sombreado */
+  border: none;
+  box-shadow: none;
 }
 
-.form-control::placeholder {
-  color: #6c757d;
-  opacity: 1;
+.form-control:focus {
+  border: none;
+  box-shadow: none;
 }
 
-.btn-cover-image {
-  width: 25%;
+#postTitle {
+  color: black;
+  font-size: calc(2rem + 2vw);
+  font-weight: bold;
 }
-#coverImageUrl {
-  display: none;
+
+#postAbout {
+  height: 400px;
+  font-family: "Courier New", Courier, monospace; 
+}
+
+#postAbout::placeholder {
+  text-align: start;
+  padding-top: 10px;
+  font-size: 1.5rem;
+}
+
+#postImage {
+  border: 3px solid #ced4da;
+  width: 33.33%;
+  min-width: 100px;
+}
+
+.navbar-brand img {
+  position: absolute;
+  left: 0;
+}
+
+#publishPost {
+  background-color: #5966ee;
+  color: white;
+  width: 15%;
 }

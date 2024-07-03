@@ -1,22 +1,19 @@
-import { addTag, publishPost } from "./tags.js";
-import { createPost, getAllPosts, updatePost, deletePost } from "./postsApi.js";
+import { createPost, getAllPosts, updatePost, deletePost } from "./postApi.js";
+import { addTag } from "./postGenerator.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const tagsInput = document.getElementById("tagsInput");
-  const tagsContainer = document.getElementById("tagsContainer");
-  const addCoverImageButton = document.getElementById("addCoverImageButton");
-  const coverImageUrl = document.getElementById("coverImageUrl");
+document
+  .getElementById("publishPost")
+  .addEventListener("click", async (event) => {
+    event.preventDefault();
 
-  tagsInput.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      addTag(tagsInput.value, tagsContainer);
-      tagsInput.value = "";
-    }
+    const postObject = {
+      image: document.getElementById("postImage").value,
+      title: document.getElementById("postTitle").value,
+      tags: tagsArray,
+      content: document.getElementById("postAbout").value,
+      author: document.getElementById("postAuthor").value,
+    };
+
+    await createPost(postObject);
+    console.log("Published");
   });
-
-  addCoverImageButton.addEventListener("click", () => {
-    coverImageUrl.style.display =
-      coverImageUrl.style.display === "none" ? "block" : "none";
-  });
-});
