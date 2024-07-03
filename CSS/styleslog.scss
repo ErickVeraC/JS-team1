@@ -1,0 +1,50 @@
+div.card-body.conteiner{
+    width: 45rem;
+}
+
+div.card{
+    border: none;
+}
+
+div.container{
+    width: 40rem;
+}
+
+.dev-img{
+    margin-left: 17rem;
+    width: 55px;
+}
+
+h1{
+    font: bold;
+    font-size: 30px;
+    margin-left: 7.5rem;
+    margin-top: 1.5rem;
+}
+
+p{
+    font-size: 16px;
+    margin-left: 4rem;
+}
+
+.list-social-button{
+    list-style: none;
+}
+
+.social-media-button{
+    background-color: #ffff;
+    border: 1px solid;
+    border-radius: 5px;
+    height: 3rem;
+    width: 80%;
+    &:hover {
+        background-color: #e0e0e0;
+        border-color: #aaa;
+}
+}
+
+.btn.btn-primary{
+    height: 2.5rem;
+    margin-left: 2rem;
+    width: 33rem;
+}
