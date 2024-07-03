@@ -1,0 +1,43 @@
+div.card-body.conteiner{
+    width: 45rem;
+}
+
+div.card{
+    border: none;
+}
+
+div.container{
+    width: 40rem;
+}
+
+.dev-img{
+    margin-left: 18rem;
+}
+
+h1{
+    font: bold;
+    font-size: 30px;
+    margin-left: 7rem;
+}
+
+p{
+    font-size: 16px;
+    margin-left: 4rem;
+}
+
+.social-media-button{
+    background-color: #ffff;
+    border: 1px solid;
+    border-radius: 5px;
+    height: 3rem;
+    width: 80%;
+    &:hover {
+        background-color: #e0e0e0;
+        border-color: #aaa;
+}
+}
+
+.btn.btn-primary{
+    margin-left: 2rem;
+    width: 33rem;
+}
