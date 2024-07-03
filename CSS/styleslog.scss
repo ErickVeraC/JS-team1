@@ -47,6 +47,13 @@ p.card-text{
 }
 }
 
+.separation-block{
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 33rem;
+}
+
 .login-email{
     width: 33rem;
     margin-left: 2rem;
@@ -61,6 +68,11 @@ p.card-text{
     width: 33rem;
 }
 
+.crate-account{
+    font-size: 14px;
+    margin-top: 1.75rem;
+}
+
 p.crate-account-text{
     margin-left: 0rem;
     text-align: center;
@@ -70,9 +82,4 @@ p.crate-account-text{
     text-align: center;
 }
 
-.separation-block{
-    margin-bottom: 2rem;
-    margin-left: 2rem;
-    margin-top: 2rem;
-    width: 33rem;
-}
+
