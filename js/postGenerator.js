@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tagElement.style.textAlign = "center";
 
       const tagText = document.createElement("span");
-      tagText.textContent = `#${tag}`;
+      tagText.textContent = tag;
       tagElement.appendChild(tagText);
 
       const deleteButton = document.createElement("button");
