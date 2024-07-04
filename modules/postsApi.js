@@ -17,12 +17,15 @@ const getAllPosts = async () => {
   return postsArray;
 };
 
-// Crear un post
+// Crear un post con marca de tiempo
 const createPost = async (postObject) => {
   postObject.timestamp = new Date().toISOString();
   let response = await fetch(`${BASE_URL}.json`, {
     method: "POST",
     body: JSON.stringify(postObject),
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
   let data = await response.json();
   return data;
@@ -33,6 +36,9 @@ const updatePost = async (postRef, newData) => {
   await fetch(`${BASE_URL}/${postRef}.json`, {
     method: "PATCH",
     body: JSON.stringify(newData),
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
 };
 
