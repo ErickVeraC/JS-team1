@@ -1,8 +1,36 @@
 import { getAllPosts } from "./postsApi.js";
-import { renderPosts } from "./printAllPosts.js";
+import { renderPosts, handleSort } from "./printAllPosts.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const postsContainer = document.getElementById("postsContainer");
   const posts = await getAllPosts();
   renderPosts(posts, postsContainer);
+
+  // Event listeners para los botones de ordenamiento
+  const relevantBtn = document.getElementById("relevantBtn");
+  relevantBtn.addEventListener("click", () => {
+    handleSort("relevant", postsContainer);
+    toggleActiveButton(relevantBtn);
+  });
+
+  const latestBtn = document.getElementById("latestBtn");
+  latestBtn.addEventListener("click", () => {
+    handleSort("latest", postsContainer);
+    toggleActiveButton(latestBtn);
+  });
+
+  const topBtn = document.getElementById("topBtn");
+  topBtn.addEventListener("click", () => {
+    handleSort("top", postsContainer);
+    toggleActiveButton(topBtn);
+  });
+
+  // Función para alternar la clase active en los botones
+  const toggleActiveButton = (btn) => {
+    const allBtns = document.querySelectorAll(".sort-btn");
+    allBtns.forEach((button) => {
+      button.classList.remove("fw-bold");
+    });
+    btn.classList.add("fw-bold");
+  };
 });
