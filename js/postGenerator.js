@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let postsObject = {};
   let tagsArray = [];
 
-  // Función para generar un color aleatorio
   function getRandomColor() {
     const letters = "0123456789ABCDEF";
     let color = "#";
@@ -19,9 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return color;
   }
 
-  // Función para mostrar las etiquetas en el contenedor
   function renderTags() {
-    // Vaciar el contenedor de etiquetas de forma segura
     while (tagsContainer.firstChild) {
       tagsContainer.removeChild(tagsContainer.firstChild);
     }
@@ -54,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Manejar la entrada de tags
   tagsInput.addEventListener("keydown", (event) => {
     if (event.key === " ") {
       const tag = event.target.value.trim();
@@ -63,11 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
         renderTags();
       }
       event.target.value = "";
-      event.preventDefault(); // Evita que se añada un espacio en el input
+      event.preventDefault();
     }
   });
 
-  // Escuchar los cambios en los campos del formulario
   postForm.querySelectorAll("input, textarea").forEach((field) => {
     field.addEventListener("input", (event) => {
       let property = event.target.name;
@@ -76,18 +71,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Manejar el evento de clic en el botón de publicar
   publishPostBtn.addEventListener("click", async () => {
     if (Object.keys(postsObject).length > 0) {
       if (tagsArray.length > 0) {
         postsObject.tags = tagsArray.map((tag) => `#${tag}`);
       }
-      postsObject.timestamp = new Date().toLocaleString(); // Agrega la fecha y hora actual
-      await createPost(postsObject); // Crea el post en la base de datos
-      document.getElementById("success-message").classList.remove("d-none"); // Mostrar mensaje de éxito
+      postsObject.timestamp = new Date().toLocaleString();
+      await createPost(postsObject);
+      document.getElementById("success-message").classList.remove("d-none");
       setTimeout(() => {
-        document.getElementById("success-message").classList.add("d-none"); // Ocultar mensaje de éxito después de unos segundos
-        window.location.href = "index.html"; // Redireccionar al documento index.html
+        document.getElementById("success-message").classList.add("d-none");
+        window.location.href = "index.html";
       }, 3000);
     }
   });
