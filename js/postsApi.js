@@ -13,7 +13,7 @@ const createPost = async (postObject) => {
 const getAllPosts = async () => {
   let response = await fetch(`${BASE_URL}.json`);
   let data = await response.json();
-  return Object.values(data);
+  return Object.entries(data).map(([id, post]) => ({ ...post, id }));
 };
 
 const updateLikes = async (postId, newLikes) => {
@@ -23,20 +23,17 @@ const updateLikes = async (postId, newLikes) => {
   });
 };
 
-const getPostByTitle = async (postTitle) => {
-  let response = await fetch(`${BASE_URL}.json`);
+const getPostById = async (postId) => {
+  let response = await fetch(`${BASE_URL}/${postId}.json`);
   let data = await response.json();
-  const posts = Object.values(data);
-  return posts.find(
-    (post) => post.title.toLowerCase() === postTitle.toLowerCase()
-  );
+  return data;
 };
 
 const addLikeToPost = async (postId) => {
   try {
-    let post = await getPostByTitle(postId);
-    let { likes, id } = post; // Aquí asumo que postId es el título del post
-    await updateLikes(id, likes + 1);
+    let post = await getPostById(postId);
+    let newLikes = (post.likes || 0) + 1;
+    await updateLikes(postId, newLikes);
     console.log(`Likes actualizados para el post ${postId}.`);
   } catch (error) {
     console.error("Error al actualizar los likes:", error);
@@ -45,13 +42,13 @@ const addLikeToPost = async (postId) => {
 
 const addCommentToPost = async (postId, comment) => {
   try {
-    let post = await getPostByTitle(postId); // Aquí asumo que postId es el título del post
+    let post = await getPostById(postId);
     if (!post.comments) {
       post.comments = [];
     }
     post.comments.push(comment);
-    await fetch(`${BASE_URL}/${post.id}/comments.json`, {
-      method: "POST",
+    await fetch(`${BASE_URL}/${postId}/comments.json`, {
+      method: "PUT",
       body: JSON.stringify(post.comments),
     });
     console.log(`Comentario agregado para el post ${postId}.`);
@@ -64,7 +61,7 @@ export {
   createPost,
   getAllPosts,
   updateLikes,
-  getPostByTitle,
+  getPostById,
   addLikeToPost,
   addCommentToPost,
 };
