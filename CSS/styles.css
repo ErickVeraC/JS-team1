@@ -774,4 +774,67 @@ div.reaction-comments.d-flex.justify-content-between.mt-3 {
 
 div.emojis-reaction_numbers.d-flex.mt-1.gap-1 {
   font-size: 14px;
-} /*aqui termina*//*# sourceMappingURL=styles.css.map */
+} /*aqui termina*/
+.form-control {
+  border: none;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  border: none;
+  box-shadow: none;
+}
+
+#postTitle {
+  color: black;
+  font-size: calc(2rem + 2vw);
+  font-weight: bold;
+}
+
+#postAbout {
+  height: 400px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#postAbout::-moz-placeholder {
+  text-align: start;
+  padding-top: 10px;
+  font-size: 1.5rem;
+}
+
+#postAbout::placeholder {
+  text-align: start;
+  padding-top: 10px;
+  font-size: 1.5rem;
+}
+
+#postImage {
+  border: 3px solid #ced4da;
+  width: 33.33%;
+  min-width: 100px;
+}
+
+.navbar-brand img {
+  position: absolute;
+  left: 0;
+}
+
+#save-post-btn {
+  background-color: #5966ee;
+  color: white;
+}
+
+.card-title:hover {
+  color: #007bff;
+}
+
+.tag-link:hover {
+  background-color: #f8f9fa;
+}
+
+.tag-link {
+  display: inline-block;
+  margin: 0.2rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+}/*# sourceMappingURL=styles.css.map */
