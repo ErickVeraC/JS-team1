@@ -1,10 +1,14 @@
 import { getAllPosts } from "./postsApi.js";
 import { renderPosts, handleSort } from "./printAllPosts.js";
+import { renderTagCards } from "./printTags.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const postsContainer = document.getElementById("postsContainer");
+  const tagsContainer = document.getElementById("tagsContainer");
+
   const posts = await getAllPosts();
   renderPosts(posts, postsContainer);
+  renderTagCards(tagsContainer);
 
   // Event listeners para los botones de ordenamiento
   const relevantBtn = document.getElementById("relevantBtn");

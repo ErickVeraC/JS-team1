@@ -1,3 +1,5 @@
+// printAllPosts.js
+
 import {
   getAllPosts,
   updateLikes,
@@ -42,6 +44,11 @@ const createCard = (post, isFirst) => {
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
   cardBody.style.height = "auto";
+
+  // Lógica para añadir la imagen al principio del cardBody si es el primer elemento
+  if (isFirst) {
+    cardBody.appendChild(cardImg);
+  }
 
   const authorAndDate = document.createElement("div");
   const author = document.createElement("small");
@@ -165,7 +172,6 @@ const createCard = (post, isFirst) => {
   cardBody.appendChild(interactionContainer);
   cardBody.appendChild(cardText);
   cardBody.appendChild(commentsContainer);
-  cardLink.appendChild(cardImg);
   cardLink.appendChild(cardBody);
 
   return cardLink;
@@ -173,10 +179,11 @@ const createCard = (post, isFirst) => {
 
 const renderPosts = (posts, postsContainer) => {
   postsContainer.innerHTML = "";
-  posts.forEach((post) => {
+  posts.forEach((post, index) => {
+    // Se incluye index para determinar isFirst
     post.likes = post.likes || 0;
     post.comments = post.comments || [];
-    const card = createCard(post);
+    const card = createCard(post, index === 0); // Pasar isFirst como true si es el primer post
     postsContainer.appendChild(card);
   });
 };
