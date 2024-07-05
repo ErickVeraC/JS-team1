@@ -822,4 +822,19 @@ div.emojis-reaction_numbers.d-flex.mt-1.gap-1 {
 #save-post-btn {
   background-color: #5966ee;
   color: white;
+}
+
+.card-title:hover {
+  color: #007bff;
+}
+
+.tag-link:hover {
+  background-color: #f8f9fa;
+}
+
+.tag-link {
+  display: inline-block;
+  margin: 0.2rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
 }/*# sourceMappingURL=styles.css.map */
