@@ -825,7 +825,7 @@ div.emojis-reaction_numbers.d-flex.mt-1.gap-1 {
 }
 
 .card-title:hover {
-  color: #007bff;
+  color: #5966ee;
 }
 
 .tag-link:hover {
@@ -837,4 +837,24 @@ div.emojis-reaction_numbers.d-flex.mt-1.gap-1 {
   margin: 0.2rem;
   padding: 0.2rem 0.5rem;
   border-radius: 0.25rem;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.card {
+  height: auto;
+}
+
+.card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+
+.card-title, .card-text, .tag-link {
+  text-decoration: none;
 }/*# sourceMappingURL=styles.css.map */

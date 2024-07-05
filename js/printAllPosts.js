@@ -1,58 +1,80 @@
+// printAllPosts.js
+
+import {
+  getAllPosts,
+  updateLikes,
+  addCommentToPost,
+  getPostById,
+  addLikeToPost,
+} from "./postsApi.js";
+
 // Función para mostrar las etiquetas en el contenedor
 const renderTags = (tags, tagsContainer) => {
   tags.forEach((tag) => {
     const tagElement = document.createElement("a");
-    tagElement.href = "#"; // Aquí es donde puedes poner el link para la página de tags
-    tagElement.className = "tag-link bg-light";
-    tagElement.textContent = `#${tag}`;
+    tagElement.href = "#";
+    tagElement.className = "tag-link text-secondary";
+    tagElement.textContent = `#${tag.replace(/^#/, "")}`;
+    tagElement.style.textDecoration = "none";
     tagsContainer.appendChild(tagElement);
   });
 };
 
 // Función para crear una card
 const createCard = (post, isFirst) => {
-  const cardLink = document.createElement("a");
-  cardLink.href = "#"; // Aquí es donde puedes poner el link para la página del post
+  const cardLink = document.createElement("div");
+  cardLink.style.width = "100%";
   cardLink.className = "card mb-3";
-  cardLink.style.textDecoration = "none"; // Eliminar subrayado en los links
+  cardLink.style.textDecoration = "none";
 
   const cardImg = document.createElement("img");
   cardImg.src = post.picSource;
   cardImg.className = "card-img-top img-fluid";
   cardImg.alt = post.title;
+  cardImg.classList.add("card-box");
 
   if (!isFirst) {
     cardImg.style.display = "none";
   } else {
-    cardImg.style.width = "100%"; // Asegura que la imagen ocupe todo el ancho de la card
+    cardImg.style.width = "100%";
+    cardImg.style.margin = "0";
+    cardImg.style.padding = "0";
   }
 
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
+  cardBody.style.height = "auto";
 
-  const cardAuthor = document.createElement("small");
-  cardAuthor.className = "text-muted fw-bold";
-  cardAuthor.textContent = post.user;
+  // Lógica para añadir la imagen al principio del cardBody si es el primer elemento
+  if (isFirst) {
+    cardBody.appendChild(cardImg);
+  }
 
-  const cardDate = document.createElement("small");
-  cardDate.className = "text-muted";
-  const date = new Date(post.timestamp);
-  const options = { month: "short", day: "numeric" };
-  cardDate.textContent = date
-    .toLocaleDateString("en-US", options)
-    .toLowerCase();
+  const authorAndDate = document.createElement("div");
+  const author = document.createElement("small");
+  author.className = "text-muted fw-bold d-block";
+  author.textContent = post.user;
+  const date = document.createElement("small");
+  date.className = "text-muted d-block";
+  date.textContent = new Date(post.timestamp).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
 
-  const cardTitle = document.createElement("h5");
-  cardTitle.className = "card-title";
+  authorAndDate.appendChild(author);
+  authorAndDate.appendChild(date);
+
+  const cardTitle = document.createElement("a");
+  cardTitle.href = `generalPost.html?id=${post.id}`;
+  cardTitle.className = "card-title h5 my-3";
   cardTitle.textContent = post.title;
-
-  // Agregar evento de cambio de color al pasar el mouse
   cardTitle.addEventListener("mouseover", () => {
-    cardTitle.style.color = "blue"; // Cambiar color al pasar el mouse
+    cardTitle.style.color = "blue";
   });
-  cardTitle.addEventListener("mouseleave", () => {
-    cardTitle.style.color = ""; // Volver al color original al salir del título
+  cardTitle.addEventListener("mouseout", () => {
+    cardTitle.style.color = "black";
   });
+  cardTitle.style.textDecoration = "none";
 
   const tagsContainer = document.createElement("div");
   tagsContainer.className = "mb-2";
@@ -62,33 +84,135 @@ const createCard = (post, isFirst) => {
   cardText.className = "card-text";
   cardText.textContent =
     post.abstract.split(" ").slice(0, 12).join(" ") + "...";
+  cardText.style.textDecoration = "none";
 
-  cardBody.appendChild(cardAuthor);
-  cardBody.appendChild(document.createElement("br"));
-  cardBody.appendChild(cardDate);
+  const likeButton = document.createElement("button");
+  likeButton.className = "btn me-2";
+  likeButton.innerHTML = "&#x1F44D;";
+  likeButton.addEventListener("click", async () => {
+    try {
+      await addLikeToPost(post.id);
+      post.likes++;
+      likeCount.textContent = `${post.likes} Likes`;
+    } catch (error) {
+      console.error("Error al agregar like:", error);
+    }
+  });
+
+  const likeCount = document.createElement("span");
+  likeCount.className = "align-self-center";
+  likeCount.textContent = `${post.likes} Likes`;
+
+  const commentButton = document.createElement("button");
+  commentButton.className = "btn btn-outline-secondary border-0";
+  commentButton.textContent = "Comentar";
+  commentButton.addEventListener("click", () => {
+    const commentInput = document.createElement("input");
+    commentInput.type = "text";
+    commentInput.className = "form-control mt-2";
+    commentInput.placeholder = "Escribe tu comentario...";
+    commentInput.addEventListener("keydown", async (event) => {
+      if (event.key === "Enter" && commentInput.value.trim() !== "") {
+        const comment = {
+          user: "Usuario",
+          text: commentInput.value.trim(),
+          timestamp: new Date().toISOString(),
+        };
+        try {
+          await addCommentToPost(post.id, comment);
+          renderComments(post, commentsContainer);
+          commentInput.remove();
+        } catch (error) {
+          console.error("Error al agregar comentario:", error);
+        }
+      }
+    });
+    cardBody.appendChild(commentInput);
+  });
+
+  const interactionContainer = document.createElement("div");
+  interactionContainer.className = "d-flex justify-content-around mb-2";
+  interactionContainer.appendChild(likeButton);
+  interactionContainer.appendChild(likeCount);
+  interactionContainer.appendChild(commentButton);
+
+  const commentsContainer = document.createElement("div");
+  commentsContainer.className = "mt-2";
+
+  const renderComments = (post, container) => {
+    container.innerHTML = "";
+    post.comments.forEach((comment) => {
+      const commentElement = document.createElement("div");
+      commentElement.className = "mb-2";
+
+      const commentText = document.createElement("p");
+      commentText.textContent = `${comment.user}: ${comment.text}`;
+      commentElement.appendChild(commentText);
+
+      const commentDate = document.createElement("small");
+      commentDate.className = "text-muted";
+      commentDate.textContent = new Date(comment.timestamp).toLocaleDateString(
+        "en-US",
+        {
+          month: "short",
+          day: "numeric",
+        }
+      );
+      commentElement.appendChild(commentDate);
+
+      container.appendChild(commentElement);
+    });
+  };
+
+  renderComments(post, commentsContainer);
+
+  cardBody.appendChild(authorAndDate);
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(tagsContainer);
+  cardBody.appendChild(interactionContainer);
   cardBody.appendChild(cardText);
-  cardLink.appendChild(cardImg);
+  cardBody.appendChild(commentsContainer);
   cardLink.appendChild(cardBody);
 
   return cardLink;
 };
 
-export { createCard };
+const renderPosts = (posts, postsContainer) => {
+  postsContainer.innerHTML = "";
+  posts.forEach((post, index) => {
+    // Se incluye index para determinar isFirst
+    post.likes = post.likes || 0;
+    post.comments = post.comments || [];
+    const card = createCard(post, index === 0); // Pasar isFirst como true si es el primer post
+    postsContainer.appendChild(card);
+  });
+};
 
-const renderPosts = (posts, container) => {
-  while (container.firstChild) {
-    container.removeChild(container.firstChild);
-  }
+const sortPosts = {
+  relevant: (posts) => {
+    return posts.sort((a, b) => {
+      if (a.comments && b.comments) {
+        return b.comments.length - a.comments.length;
+      }
+      return 0;
+    });
+  },
+  latest: (posts) => {
+    return posts.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+  },
+  top: (posts) => {
+    return posts.sort((a, b) => b.likes - a.likes);
+  },
+};
 
-  let isFirst = true;
-  for (let key in posts) {
-    const post = posts[key];
-    const card = createCard(post, isFirst);
-    container.appendChild(card);
-    isFirst = false;
+const handleSort = async (sortType, postsContainer) => {
+  try {
+    const posts = await getAllPosts();
+    const sortedPosts = sortPosts[sortType](posts);
+    renderPosts(sortedPosts, postsContainer);
+  } catch (error) {
+    console.error("Error al ordenar y renderizar los posts:", error);
   }
 };
 
-export { renderPosts };
+export { renderPosts, handleSort };
