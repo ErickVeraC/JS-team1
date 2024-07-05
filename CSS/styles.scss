@@ -866,7 +866,7 @@ div.emojis-reaction_numbers.d-flex.mt-1.gap-1{
 // mostrar los posts
 
 .card-title:hover {
-  color: #007bff;
+  color: #5966ee;
 }
 .tag-link:hover {
   background-color: #f8f9fa;
@@ -876,4 +876,24 @@ div.emojis-reaction_numbers.d-flex.mt-1.gap-1{
   margin: 0.2rem;
   padding: 0.2rem 0.5rem;
   border-radius: 0.25rem;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.card {
+  height: auto;
+}
+
+.card img {
+  width: 100%; 
+  object-fit: cover; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.card-title, .card-text, .tag-link {
+  text-decoration: none; 
+
 }
