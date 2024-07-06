@@ -633,6 +633,10 @@ body {
   border: none;
 }
 
+.navbar.navbar-expand-lg.d-flex.border-bottom {
+  background-color: white;
+}
+
 .button-link {
   background-color: white;
   color: #525252;
