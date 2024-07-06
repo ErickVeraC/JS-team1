@@ -23,6 +23,9 @@ const createCardLinksTags = (tag, posts) => {
     anchor.href = `generalPost.html?id=${post.id}`;
     anchor.textContent = post.title;
     anchor.style.textDecoration = "none";
+    anchor.style.color = "black"; // Color del texto negro
+    anchor.addEventListener("mouseover", () => (anchor.style.color = "black")); // Mantener el color negro al hacer hover
+    anchor.addEventListener("mouseout", () => (anchor.style.color = "black")); // Asegurar el color negro al salir del hover
 
     listItem.appendChild(anchor);
 
@@ -31,7 +34,9 @@ const createCardLinksTags = (tag, posts) => {
       const comments = document.createElement("p");
       comments.className = "text-muted";
       comments.style.fontSize = "0.875rem"; // Tamaño más pequeño para los comentarios
-      comments.textContent = `${post.comments.length} comentarios`;
+      const commentsText =
+        post.comments.length === 1 ? "comentario" : "comentarios";
+      comments.textContent = `${post.comments.length} ${commentsText}`;
       listItem.appendChild(comments);
     }
 

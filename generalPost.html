@@ -1,55 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./CSS/stylesgeneralPost.css">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./CSS/stylesgeneralPost.css" />
+  </head>
+  <body>
     <main>
-        <div class="container d-flex justify-content-center flex-wrap">
-            <div class="main-container col-lg-7 card mt-5">
-                <div class="card border-0">
-                  <div>
-                    <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wzgGMCLs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_775/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qpdtjnt4fnuwag8noec8.png" class="card-img-top" alt="...">
-                  </div>
-                  <div class="card-body p-4">
-                    <div class="user-name">
-                        <div class="user-name_date d-flex">
-                          <div>
-                            <img src="https://media.dev.to/cdn-cgi/image/width=90,height=90,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F275629%2Fffa9b0d7-4a34-4dc0-bcf3-ab55c9b5819c.jpeg" class="profile-image" alt="">
-                          </div>
-                          <div>
-                            <p class="date-name m-0"><strong>Andres Ledezma</strong></p>
-                            <p class="date-name m-0">May 26</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="emojis-div d-flex mt-4 gap-4">
-                        <span class="d-flex"><img src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg" class="img-emoji" alt=""><span>8</span></span>
-                        <span class="d-flex"><img src="https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg" class="img-emoji" alt="">12</span>
-                        <span class="d-flex"><img src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg" class="img-emoji" alt="">5</span>
-                        <span class="d-flex"><img src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg" class="img-emoji" alt="">7</span>
-                        <span class="d-flex"><img src="https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg" class="img-emoji" alt="">1</span>
-                      </div>
-                    <h5 class="card-title"> Need to stay up-to-date with the most relevant trends in software, such as generate AI, cloud computing, and all things frontend?</h5>
-                    <div class="hashtags-info">
-                        <span>#database</span><span>#mysql</span><span>#programming</span><span>#designsystem</span>
-                      </div>
-                      <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab eligendi voluptatem sed harum fugiat libero quo voluptatum quibusdam laborum eum at velit minus soluta sequi, officia nemo architecto amet saepe.
-                        Deserunt autem, nihil fugit eveniet nulla suscipit temporibus quaerat accusamus exercitationem nam qui consequatur illum aliquid incidunt. Fugit, expedita nihil laboriosam corporis nemo ipsum nesciunt, mollitia quisquam, dicta cumque accusantium!
-                        Omnis non consectetur est hic necessitatibus ex doloribus laboriosam quod, tempore rerum, error corrupti voluptate sunt, beatae corporis expedita officia eos aspernatur! Voluptas officiis rerum, quidem rem labore incidunt aliquam.
-                        Dolore similique ab quisquam esse aut? Quibusdam, omnis laboriosam porro, ab nobis provident, placeat cupiditate et velit accusamus fuga rerum amet dolorem molestias! Soluta commodi error cum, placeat temporibus minima.
-                        Quis nemo nostrum et aut, obcaecati autem consectetur nobis tempore excepturi fuga, recusandae commodi, quod animi! Enim, fuga iste explicabo atque est assumenda mollitia ipsum modi, ut quae vero repellat!</p>
-                      </div>
-                   </div>
-                  </div>
-                </div>
-        </div>
+      <div class="container d-flex justify-content-center flex-wrap">
+        <div id="postContainer" class="main-container col-lg-7 card mt-5"></div>
+      </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/printAllPosts.js" type="module"></script>
+  </body>
 </html>
