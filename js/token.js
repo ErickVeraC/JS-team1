@@ -1,7 +1,7 @@
 
 
 
-export const validateSession = () => {
+export const  validateSession =() => {
     let hasToken = localStorage.getItem("token");
     let createPostBtn = document.getElementById("createPostBtn");
     let notifications = document.getElementById("notifications");
