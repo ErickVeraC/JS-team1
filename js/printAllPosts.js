@@ -75,6 +75,7 @@ const createCard = (post, isFirst) => {
     cardTitle.style.color = "black";
   });
   cardTitle.style.textDecoration = "none";
+  cardTitle.style.display = "block";
 
   const tagsContainer = document.createElement("div");
   tagsContainer.className = "mb-2";
@@ -188,6 +189,14 @@ const renderPosts = (posts, postsContainer) => {
   });
 };
 
+document.addEventListener("DOMContentLoaded", async () => {
+  const postId = getPostIdFromUrl();
+  if (postId) {
+    const postContainer = document.getElementById("postContainer");
+    await loadPost(postId, postContainer);
+  }
+});
+
 const sortPosts = {
   relevant: (posts) => {
     return posts.sort((a, b) => {
@@ -215,4 +224,25 @@ const handleSort = async (sortType, postsContainer) => {
   }
 };
 
-export { renderPosts, handleSort };
+// Función para obtener el ID del post desde la URL
+const getPostIdFromUrl = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get("id");
+};
+
+// Función para cargar y mostrar un solo post
+const loadPost = async (postId, postContainer) => {
+  try {
+    const post = await getPostById(postId);
+    if (post) {
+      const card = createCard(post, true); // Pasar true para asegurar que la imagen se muestre
+      postContainer.appendChild(card);
+    } else {
+      console.error(`No se encontró el post con ID: ${postId}`);
+    }
+  } catch (error) {
+    console.error("Error al cargar el post:", error);
+  }
+};
+
+export { renderPosts, handleSort, getPostIdFromUrl, loadPost };
