@@ -1,6 +1,10 @@
 import { getAllPosts } from "./postsApi.js";
 import { renderPosts, handleSort } from "./printAllPosts.js";
 import { renderTagCards } from "./printTags.js";
+import { validateSession, logIn, logOut } from "./token.js";
+
+
+
 
 document.addEventListener("DOMContentLoaded", async () => {
   const postsContainer = document.getElementById("postsContainer");
