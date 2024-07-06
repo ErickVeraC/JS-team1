@@ -637,6 +637,38 @@ body {
   background-color: white;
 }
 
+.search-container.border.rounded.d-none.d-md-block.ms-2.w-50.d-flex.flex-nowrap.align-items-center {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.search-container.border.rounded.d-none.d-md-block.ms-2.w-50.d-flex.flex-nowrap.align-items-center .search-button.btn.btn-ghost-morado {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.search-container.border.rounded.d-none.d-md-block.ms-2.w-50.d-flex.flex-nowrap.align-items-center .search-button.btn.btn-ghost-morado svg {
+  fill: #6c757d;
+}
+.search-container.border.rounded.d-none.d-md-block.ms-2.w-50.d-flex.flex-nowrap.align-items-center .search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
+}
+
+input.position-relative.w-100.border-0 {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
 .button-link {
   background-color: white;
   color: #525252;
