@@ -6,6 +6,7 @@ import { validateSession, logIn, logOut } from "./token.js";
 
 
 
+
 document.addEventListener("DOMContentLoaded", async () => {
   const postsContainer = document.getElementById("postsContainer");
   const tagsContainer = document.getElementById("tagsContainer");
