@@ -98,3 +98,45 @@ div.reaction-comments.d-flex.justify-content-between.mt-3 {
 div.emojis-reaction_numbers.d-flex.mt-1.gap-1 {
   font-size: 14px;
 }/*# sourceMappingURL=stylesgeneralPost.css.map */
+
+.card {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+}
+
+.card-user {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-timestamp {
+  color: #6c757d;
+}
+
+.card-title {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.card-tags {
+  margin-top: 0.5rem;
+}
+
+.card-abstract {
+  margin-top: 1rem;
+}
+
+.card-comment-input {
+  width: 100%;
+}
+
+.card-comments {
+  margin-top: 1rem;
+  color: #fff; /* Color del texto de los comentarios */
+}
