@@ -36,7 +36,7 @@
                           <nav id="DevCommunity">
                               <ul class="nav flex-column">
                                   <li class="nav-item">
-                                      <a class="nav btn text-start btn-ghost-morado text-nowrap py-2" href="#">
+                                      <a class="nav btn text-start btn-ghost-morado text-nowrap py-2" href="index.html">
                                           <img src="" alt="" class="me-2 ms-1" />Home</a>
                                   </li>
                                   <!-- ... otros elementos del menú ... -->
@@ -53,8 +53,8 @@
                       <svg class="" width="24" height="24">
                           <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"></path>
                       </svg>
-                  </button>
-                  <input class="position-relative w-100 border-0" type="text" placeholder="Search..." />
+                  </button> 
+                  <input class="position-relative w-100 border-0" type="text" placeholder="Search..."  id="navbar"/>
               </div>
               <div class="ms-auto me-3 d-flex justify-content-end align-items-center gap-3">
                   <button class="d-block d-md-none bg-transparent btn btn-light">
@@ -62,9 +62,9 @@
                           <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"></path>
                       </svg>
                   </button>
-                  <button class="d-none btn btn-outline-dark-morado text-nowrap" id="createPostBtn">Create Post</button>
+                  <a href="createPost.html"><button class="d-none btn btn-outline-dark-morado text-nowrap" id="createPostBtn" >Create Post</button></a>
                   <a id="createAccount" class="d-none d-md-block btn btn-outline-dark-morado text-nowrap" href="login.html">Create Account</a>
-                  <a id="notifications" class="d-none" href="">
+                  <a id="notifications" class="d-none" href="createPost.html">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                           <path d="M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z"></path>
                       </svg>
@@ -80,8 +80,8 @@
     <main class="container-fluid d-flex justify-content-center">
       <div class="row">
         <aside class="adan col-3 d-none d-sm-block mt-2">
-          <article class="card mb-3">
-            <div class="card-body">
+          <article class="card mb-3 " id="login">
+            <div class="card-body" >
               <h5 class="card-title">
                 DEV Community is a community of 1,513,398 amazing developers
               </h5>
