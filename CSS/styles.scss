@@ -723,6 +723,25 @@ body {
   }
 }
 
+#btn-create-posts{
+  text-decoration: none;
+}
+
+#createPostBtn {
+  border: solid 1px;
+  border-color: #3b49df;
+  font-weight: bold;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  color: #3b49df;
+  &:hover {
+    border: 1px solid #3b49df;
+    background-color: #3b49df;
+    color: white; 
+    text-decoration: underline;
+  }
+}
+
 input.position-relative.w-100.border-0{
   border: none;
   box-shadow: none;
