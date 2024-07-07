@@ -31,6 +31,7 @@ const printOnePost = async (postId) => {
 
   const user = document.createElement("h6");
   user.textContent = post.user;
+  user.classList.add("card-user");
   cardBody.appendChild(user);
 
   const timestamp = document.createElement("p");
@@ -38,43 +39,53 @@ const printOnePost = async (postId) => {
     month: "short",
     day: "numeric",
   });
+  timestamp.classList.add("card-timestamp");
   cardBody.appendChild(timestamp);
 
   const title = document.createElement("h2");
   title.textContent = post.title;
+  title.classList.add("card-title", "mb-4"); // Aumenta tamaño de fuente del título y añade margen inferior
   cardBody.appendChild(title);
 
   const tagsContainer = document.createElement("div");
-  post.tags.forEach((tag) => {
+  tagsContainer.classList.add("card-tags");
+  post.tags.forEach((tag, index) => {
     const tagElement = document.createElement("a");
     tagElement.href = "#";
-    tagElement.className = "tag-link text-secondary";
+    tagElement.className = "tag-link text-secondary text-decoration-none";
     tagElement.textContent = `#${tag.replace(/^#/, "")}`;
-    tagElement.style.color = getRandomColor();
     tagsContainer.appendChild(tagElement);
+
+    // Añadir un espacio después de cada tag, excepto después del último
+    if (index < post.tags.length - 1) {
+      tagsContainer.appendChild(document.createTextNode(" "));
+    }
   });
   cardBody.appendChild(tagsContainer);
 
   const abstract = document.createElement("p");
   abstract.textContent = post.abstract;
+  abstract.classList.add("card-abstract", "fs-5"); // Aumenta tamaño de fuente del abstract
   cardBody.appendChild(abstract);
 
   const commentInput = document.createElement("input");
   commentInput.type = "text";
   commentInput.className = "form-control mt-3";
   commentInput.placeholder = "Add to the discussion";
+  commentInput.classList.add("card-comment-input");
   cardBody.appendChild(commentInput);
 
-  const commentsContainer = document.createElement("div");
-  commentsContainer.className = "bg-secondary p-3 mt-3";
-  if (post.comments) {
+  if (post.comments && post.comments.length > 0) {
     post.comments.forEach((comment) => {
+      // Contenedor individual para cada comentario
+      const commentContainer = document.createElement("div");
+      commentContainer.className = "border border-secondary rounded p-3 mt-3"; // Borde y esquinas redondeadas
       const commentText = document.createElement("p");
       commentText.textContent = `${comment.user}: ${comment.text}`;
-      commentsContainer.appendChild(commentText);
+      commentContainer.appendChild(commentText);
+      cardBody.appendChild(commentContainer);
     });
   }
-  cardBody.appendChild(commentsContainer);
 
   card.appendChild(cardBody);
   printPost.appendChild(card);
