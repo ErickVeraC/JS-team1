@@ -18,11 +18,11 @@ const countTagsFrequency = (posts) => {
   return tagCount;
 };
 
-// Función para obtener los 5 tags más usados
+// Función para obtener los 8 tags más usados
 const getTopTags = (tagCount) => {
   return Object.entries(tagCount)
     .sort(([, a], [, b]) => b - a)
-    .slice(0, 5)
+    .slice(0, 8)
     .map(([tag]) => tag);
 };
 
