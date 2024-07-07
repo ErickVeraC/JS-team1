@@ -9,16 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
   let postsObject = {};
   let tagsArray = [];
 
-  function getRandomColor() {
+  const getRandomColor = () => {
     const letters = "0123456789ABCDEF";
     let color = "#";
     for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
-  }
+  };
 
-  function renderTags() {
+  const renderTags = () => {
     while (tagsContainer.firstChild) {
       tagsContainer.removeChild(tagsContainer.firstChild);
     }
@@ -44,17 +44,24 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteButton.addEventListener("click", () => {
         tagsArray.splice(index, 1);
         renderTags();
+        tagsInput.style.display = "block";
       });
 
       tagElement.appendChild(deleteButton);
       tagsContainer.appendChild(tagElement);
     });
-  }
+
+    if (tagsArray.length >= 4) {
+      tagsInput.style.display = "none";
+    } else {
+      tagsInput.style.display = "block";
+    }
+  };
 
   tagsInput.addEventListener("keydown", (event) => {
     if (event.key === " ") {
       const tag = event.target.value.trim();
-      if (tag && !tagsArray.includes(tag)) {
+      if (tag && !tagsArray.includes(tag) && tagsArray.length < 4) {
         tagsArray.push(tag);
         renderTags();
       }
@@ -64,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   postForm.querySelectorAll("input, textarea").forEach((field) => {
+    field.setAttribute("required", "true"); // Hacer los inputs obligatorios
     field.addEventListener("input", (event) => {
       let property = event.target.name;
       let value = event.target.value;
