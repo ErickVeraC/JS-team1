@@ -8,7 +8,7 @@ export const  validateSession =() => {
     let avatar = document.getElementById("avatar");
     let createAccount = document.getElementById("createAccount");
     let logOutBtn = document.getElementById("logOutBtn");
-    let cardlogin = document.getElementById("login");
+    let cardlogin = document.getElementById("card-login");
 
     if (!hasToken) {
         if (createPostBtn) createPostBtn.classList.remove("d-md-block");

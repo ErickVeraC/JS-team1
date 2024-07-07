@@ -188,12 +188,24 @@ const renderPosts = (posts, postsContainer) => {
 
 // Función para filtrar los posts según la búsqueda
 const filterPosts = (posts, searchTerm) => {
-  return posts.filter(post =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) 
+  const lowerCaseSearchTerm = searchTerm.toLowerCase();
+
+  // Separar los posts que tienen una coincidencia exacta en el título
+  const exactMatches = posts.filter(post =>
+    post.title.toLowerCase().includes(lowerCaseSearchTerm)
   );
+
+  // Incluir también los posts que tienen coincidencias en el contenido
+  const contentMatches = posts.filter(post =>
+    post.abstract.toLowerCase().includes(lowerCaseSearchTerm) && 
+    !post.title.toLowerCase().includes(lowerCaseSearchTerm)
+  );
+
+  // Combinar ambas listas, priorisa a los títulos
+  return [...exactMatches, ...contentMatches];
 };
 
-// búsqueda en tiempo real
+
 const handleSearch = async (event) => {
   const searchTerm = event.target.value;
   const postsContainer = document.getElementById('postsContainer');
@@ -203,13 +215,24 @@ const handleSearch = async (event) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById('navbar');
+  const searchInput = document.getElementById('searchInput');
+  const searchButton = document.getElementById('searchButton');
+
+  if (searchButton) {
+    searchButton.addEventListener('click', () => {
+      searchInput.classList.toggle('d-none');
+      searchInput.focus();
+    });
+  }
+
   if (searchInput) {
     searchInput.addEventListener('input', handleSearch);
   }
+
+  validateSession();
 });
 
-// Código para manejar el sorting y otras funcionalidades
+
 const sortPosts = {
   relevant: (posts) => {
     return posts.sort((a, b) => {
