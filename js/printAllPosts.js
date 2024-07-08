@@ -1,3 +1,6 @@
+// Este archivo se encarga de renderizar los posts en el contenedor de la página
+
+// Importar funciones necesarias de otros archivos
 import {
   getAllPosts,
   updateLikes,
@@ -10,7 +13,7 @@ import {
 const renderTags = (tags, tagsContainer) => {
   tags.forEach((tag) => {
     const tagElement = document.createElement("a");
-    tagElement.href = "#";
+    tagElement.href = `tags.html?tag=${tag.replace(/^#/, "")}`;
     tagElement.className = "tag-link text-secondary";
     tagElement.textContent = `#${tag.replace(/^#/, "")}`;
     tagElement.style.textDecoration = "none";
@@ -25,6 +28,10 @@ const createCard = (post, isFirst) => {
   cardLink.className = "card mb-3";
   cardLink.style.textDecoration = "none";
 
+  const cardBody = document.createElement("div");
+  cardBody.className = "card-body";
+  cardBody.style.height = "auto";
+
   const cardImg = document.createElement("img");
   cardImg.src = post.picSource;
   cardImg.className = "card-img-top img-fluid";
@@ -37,14 +44,6 @@ const createCard = (post, isFirst) => {
     cardImg.style.width = "100%";
     cardImg.style.margin = "0";
     cardImg.style.padding = "0";
-  }
-
-  const cardBody = document.createElement("div");
-  cardBody.className = "card-body";
-  cardBody.style.height = "auto";
-
-  // Lógica para añadir la imagen al principio del cardBody si es el primer elemento
-  if (isFirst) {
     cardBody.appendChild(cardImg);
   }
 
@@ -176,6 +175,7 @@ const createCard = (post, isFirst) => {
   return cardLink;
 };
 
+// Función para renderizar los posts en el contenedor
 const renderPosts = (posts, postsContainer) => {
   postsContainer.innerHTML = "";
   posts.forEach((post, index) => {
@@ -191,48 +191,49 @@ const filterPosts = (posts, searchTerm) => {
   const lowerCaseSearchTerm = searchTerm.toLowerCase();
 
   // Separar los posts que tienen una coincidencia exacta en el título
-  const exactMatches = posts.filter(post =>
+  const exactMatches = posts.filter((post) =>
     post.title.toLowerCase().includes(lowerCaseSearchTerm)
   );
 
   // Incluir también los posts que tienen coincidencias en el contenido
-  const contentMatches = posts.filter(post =>
-    post.abstract.toLowerCase().includes(lowerCaseSearchTerm) && 
-    !post.title.toLowerCase().includes(lowerCaseSearchTerm)
+  const contentMatches = posts.filter(
+    (post) =>
+      post.abstract.toLowerCase().includes(lowerCaseSearchTerm) &&
+      !post.title.toLowerCase().includes(lowerCaseSearchTerm)
   );
 
-  // Combinar ambas listas, priorisa a los títulos
+  // Combinar ambas listas, priorizando a los títulos
   return [...exactMatches, ...contentMatches];
 };
 
-
+// Función para manejar la búsqueda de posts
 const handleSearch = async (event) => {
   const searchTerm = event.target.value;
-  const postsContainer = document.getElementById('postsContainer');
+  const postsContainer = document.getElementById("postsContainer");
   const posts = await getAllPosts();
   const filteredPosts = filterPosts(posts, searchTerm);
   renderPosts(filteredPosts, postsContainer);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById('searchInput');
-  const searchButton = document.getElementById('searchButton');
+  const searchInput = document.getElementById("searchInput");
+  const searchButton = document.getElementById("searchButton");
 
   if (searchButton) {
-    searchButton.addEventListener('click', () => {
-      searchInput.classList.toggle('d-none');
+    searchButton.addEventListener("click", () => {
+      searchInput.classList.toggle("d-none");
       searchInput.focus();
     });
   }
 
   if (searchInput) {
-    searchInput.addEventListener('input', handleSearch);
+    searchInput.addEventListener("input", handleSearch);
   }
 
   validateSession();
 });
 
-
+// Función para ordenar los posts
 const sortPosts = {
   relevant: (posts) => {
     return posts.sort((a, b) => {
@@ -250,6 +251,7 @@ const sortPosts = {
   },
 };
 
+// Función para manejar el ordenamiento de posts
 const handleSort = async (sortType, postsContainer) => {
   try {
     const posts = await getAllPosts();
@@ -260,11 +262,13 @@ const handleSort = async (sortType, postsContainer) => {
   }
 };
 
+// Función para obtener el ID del post desde la URL
 const getPostIdFromUrl = () => {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get("id");
 };
 
+// Función para cargar un post individual
 const loadPost = async (postId, postContainer) => {
   try {
     const post = await getPostById(postId);

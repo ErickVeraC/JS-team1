@@ -5,20 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const publishPostBtn = document.getElementById("save-post-btn");
   const tagsInput = document.getElementById("postTags");
   const tagsContainer = document.getElementById("tagsContainer");
+  const postInfo = document.getElementById("postInfo");
 
   let postsObject = {};
   let tagsArray = [];
 
-  function getRandomColor() {
+  const getRandomColor = () => {
     const letters = "0123456789ABCDEF";
     let color = "#";
     for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
-  }
+  };
 
-  function renderTags() {
+  const renderTags = () => {
     while (tagsContainer.firstChild) {
       tagsContainer.removeChild(tagsContainer.firstChild);
     }
@@ -44,31 +45,99 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteButton.addEventListener("click", () => {
         tagsArray.splice(index, 1);
         renderTags();
+        tagsInput.style.display = "block";
       });
 
       tagElement.appendChild(deleteButton);
       tagsContainer.appendChild(tagElement);
     });
-  }
+
+    if (tagsArray.length >= 4) {
+      tagsInput.style.display = "none";
+    } else {
+      tagsInput.style.display = "block";
+    }
+  };
+
+  const defaultInfoText = `
+    <strong>Writing a Great Post Title</strong><br>
+    Think of your post title as a super short (but compelling!) description — like an overview of the actual post in one short sentence.
+    Use keywords where appropriate to help ensure people can find your post by search.
+  `;
+
+  const taggingGuidelinesText = `
+    <strong>Tagging Guidelines</strong><br>
+    Tags help people find your post - think of them as the topics or categories that best describe your post.
+    Add up to four space-separated tags per post. Use existing tags whenever possible.
+    Some tags have special posting guidelines - double check to make sure your post complies with them.
+  `;
+
+  const abstractGuidelinesText = `
+    <strong>Abstract Guidelines</strong><br>
+    Provide a brief summary of your post in 20 words or less. This will give readers a quick insight into the content of your post.
+  `;
+
+  const coverImageGuidelinesText = `
+    <strong>Cover Image Guidelines</strong><br>
+    Paste the URL of the image you want to use as the cover. This will be the main visual representation of your post.
+  `;
+
+  const authorGuidelinesText = `
+    <strong>Tell us who you are</strong><br>
+    Provide your name or username so readers know who wrote the post.
+  `;
+
+  const updatePostInfo = (text) => {
+    postInfo.innerHTML = text;
+  };
+
+  updatePostInfo(defaultInfoText);
+
+  postForm.querySelectorAll("input, textarea").forEach((field) => {
+    field.setAttribute("required", "true"); // Hacer los inputs obligatorios
+    field.addEventListener("input", (event) => {
+      let property = event.target.name;
+      let value = event.target.value;
+      postsObject[property] = value;
+    });
+
+    field.addEventListener("focus", (event) => {
+      let infoText;
+      switch (event.target.id) {
+        case "postTags":
+          infoText = taggingGuidelinesText;
+          break;
+        case "postAbstract":
+          infoText = abstractGuidelinesText;
+          break;
+        case "postCoverImage":
+          infoText = coverImageGuidelinesText;
+          break;
+        case "postAuthor":
+          infoText = authorGuidelinesText;
+          break;
+        default:
+          infoText = defaultInfoText;
+          break;
+      }
+      updatePostInfo(infoText);
+    });
+
+    field.addEventListener("blur", () => {
+      updatePostInfo(defaultInfoText);
+    });
+  });
 
   tagsInput.addEventListener("keydown", (event) => {
     if (event.key === " ") {
       const tag = event.target.value.trim();
-      if (tag && !tagsArray.includes(tag)) {
+      if (tag && !tagsArray.includes(tag) && tagsArray.length < 4) {
         tagsArray.push(tag);
         renderTags();
       }
       event.target.value = "";
       event.preventDefault();
     }
-  });
-
-  postForm.querySelectorAll("input, textarea").forEach((field) => {
-    field.addEventListener("input", (event) => {
-      let property = event.target.name;
-      let value = event.target.value;
-      postsObject[property] = value;
-    });
   });
 
   publishPostBtn.addEventListener("click", async () => {

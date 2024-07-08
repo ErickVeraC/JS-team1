@@ -8,7 +8,7 @@ const createCardLinksTags = (tag, posts) => {
 
   const cardHeader = document.createElement("div");
   cardHeader.className = "card-header bg-light text-body fw-bold";
-  cardHeader.style.fontSize = "1.25rem"; 
+  cardHeader.style.fontSize = "1.25rem";
   cardHeader.textContent = tag;
   card.appendChild(cardHeader);
 
@@ -24,8 +24,8 @@ const createCardLinksTags = (tag, posts) => {
     anchor.textContent = post.title;
     anchor.style.textDecoration = "none";
     anchor.style.color = "black"; // Color del texto negro
-    anchor.addEventListener("mouseover", () => (anchor.style.color = "black")); 
-    anchor.addEventListener("mouseout", () => (anchor.style.color = "black")); 
+    anchor.addEventListener("mouseover", () => (anchor.style.color = "black"));
+    anchor.addEventListener("mouseout", () => (anchor.style.color = "black"));
 
     listItem.appendChild(anchor);
 
@@ -56,7 +56,6 @@ const renderTagCards = async (container) => {
       .filter((post) => post.tags.includes(tag))
       .slice(0, 5);
 
-    
     while (tagPosts.length < 5) {
       tagPosts.push({ title: "No more posts", id: "#" });
     }
