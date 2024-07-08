@@ -13,7 +13,7 @@ import {
 const renderTags = (tags, tagsContainer) => {
   tags.forEach((tag) => {
     const tagElement = document.createElement("a");
-    tagElement.href = "#";
+    tagElement.href = `tags.html?tag=${tag.replace(/^#/, "")}`;
     tagElement.className = "tag-link text-secondary";
     tagElement.textContent = `#${tag.replace(/^#/, "")}`;
     tagElement.style.textDecoration = "none";

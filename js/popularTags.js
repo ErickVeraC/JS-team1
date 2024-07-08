@@ -38,7 +38,7 @@ const renderPopularTags = (tags, containerId) => {
 
     const tagLink = document.createElement("a");
     tagLink.className = "nav-popular__tag-link c-link c-link--block";
-    tagLink.href = `/t/${tag}`;
+    tagLink.href = `tags.html?tag=${tag}`;
     tagLink.textContent = `#${tag}`;
 
     tagElement.appendChild(tagLink);
